@@ -9,7 +9,6 @@ private:
 	std::string m_TokenValue;
 	Position m_StartPosition;
 	Position m_EndPosition;
-
 public:
 	StringToken()
 	{

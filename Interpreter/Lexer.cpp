@@ -94,6 +94,7 @@ std::pair<std::vector<std::variant<IntegerToken, FloatToken, StringToken, Operat
 		}
 	}
 
+	tokenVector.push_back(OperatorToken(Operator(TOK_EOF, m_CurrentPosition)));
 	return std::pair<std::vector<std::variant<IntegerToken, FloatToken, StringToken, OperatorToken>>, bool> { tokenVector, false };
 }
 
