@@ -2,11 +2,19 @@
 #include "Lexer.h"
 #include<vector>
 #include<variant>
+#include<sstream>
 
 int main()
 {
-	std::cout << "(3.0 + 4) + (5 * 5.5) - (15/5) - 6" << std::endl;
-	Lexer l("<stdin>", "(3.0 + 4) + (5 * 5.5) - (15 / 5) - 6");
+	
+
+	std::string statement;
+	std::cout << ">>>";
+	std::getline(std::cin, statement);
+	std::cout << std::endl;
+	std::cout << statement << std::endl;
+
+	Lexer l("<stdin>", statement);
 	std::pair<std::vector<std::variant<IntegerToken, FloatToken, StringToken, OperatorToken>>, bool> generatedTokens = l.GenerateTokens();
 	std::vector<std::variant<IntegerToken, FloatToken, StringToken, OperatorToken>> tokens = generatedTokens.first;
 	bool error = generatedTokens.second;
