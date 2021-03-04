@@ -13,7 +13,7 @@ private:
 public:
 	IntegerToken()
 	{
-
+		m_TokenValue = 0;
 	}
 	IntegerToken(std::string tokenType)
 	{

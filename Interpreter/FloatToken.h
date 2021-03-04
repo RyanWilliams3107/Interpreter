@@ -17,7 +17,7 @@ private:
 public:
 	FloatToken()
 	{
-
+		m_TokenValue = 0.0f;
 	}
 	FloatToken(Operator op)
 	{

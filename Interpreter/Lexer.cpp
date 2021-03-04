@@ -46,12 +46,14 @@ std::pair<std::vector<std::variant<IntegerToken, FloatToken, StringToken, Operat
 			if (integer) 
 			{
 				IntegerToken intTokenToPush = std::visit([](auto&& token) -> IntegerToken { 
-					return IntegerToken(token.GetTokenType(), token.GetTokenValue(), token.GetStartPosition(), token.GetEndPosition()); }, token);
+					return IntegerToken(token.GetTokenType(), (int)token.GetTokenValue(), token.GetStartPosition(), token.GetEndPosition()); }, token);
 				tokenVector.push_back(intTokenToPush);
 			}
 			else
 			{
-				FloatToken floatTokenToPush = std::visit([](auto&& token) -> FloatToken { return FloatToken(token.GetTokenType(), token.GetTokenValue(), token.GetStartPosition(), token.GetEndPosition()); }, token);
+				FloatToken floatTokenToPush = std::visit([](auto&& token) -> FloatToken { 
+					return FloatToken(token.GetTokenType(), (float)token.GetTokenValue(), token.GetStartPosition(), token.GetEndPosition()); 
+					}, token);
 				tokenVector.push_back(floatTokenToPush);
 			}
 		}
@@ -125,25 +127,10 @@ std::pair<std::variant<IntegerToken, FloatToken>, bool> Lexer::MakeNumber()
 
 	if (dotCount == 0)
 	{
-		try
-		{
-			return std::pair<IntegerToken, bool> { IntegerToken(TOK_INTEGER, std::stoi(numberAsString), startPos, m_CurrentPosition), true };
-		}
-		catch (...)
-		{
-			std::cout << "exception" << std::endl;
-		}
+		return std::pair<IntegerToken, bool> { IntegerToken(TOK_INTEGER, std::stoi(numberAsString), startPos, m_CurrentPosition), true };
 	}
 	else
 	{
-		
-		try
-		{
-			return std::pair<FloatToken, bool>  { FloatToken(TOK_FLOAT, std::stof(numberAsString), startPos, m_CurrentPosition), false };
-		}
-		catch (...)
-		{
-			std::cout << "exception" << std::endl;
-		}
+		return std::pair<FloatToken, bool>  { FloatToken(TOK_FLOAT, std::stof(numberAsString), startPos, m_CurrentPosition), false };
 	}
 }
