@@ -19,12 +19,6 @@ public:
 	{
 		m_TokenValue = 0.0f;
 	}
-	FloatToken(Operator op)
-	{
-		m_TokenType = op.m_OperatorName;
-		m_StartPosition = op.m_Position;
-		m_EndPosition = op.m_Position.Copy();
-	}
 	FloatToken(std::string tokenType)
 	{
 		m_TokenType = tokenType;
