@@ -102,9 +102,9 @@ std::pair<std::variant<IntegerToken, FloatToken>, bool> Lexer::MakeNumber()
 	std::string numberAsString = "";
 	int dotCount = 0;
 	Position startPos = m_CurrentPosition.Copy();
-	std::string digitsPlusDot = "0123456789.";
 
-	while ((m_CurrentCharacter != NULL) && (digitsPlusDot.find(m_CurrentCharacter) != std::string::npos))
+
+	while ((m_CurrentCharacter != NULL) && (DIGITSPLUSDOT.find(m_CurrentCharacter) != std::string::npos))
 	{
 		if (m_CurrentCharacter == '.')
 		{

@@ -3,7 +3,6 @@
 #include "Position.h"
 #include "Operator.h"
 
-#define DIGITS "0123456789"
 
 #define TOK_INTEGER "INTEGER"
 #define TOK_FLOAT "FLOAT"
@@ -18,6 +17,13 @@
 #define TOK_RIGHTPAREN "RIGHTPAREN"
 #define TOK_POWER "POWER"
 #define TOK_EOF "EOF"
+
+const std::string DIGITS = "0123456789";
+const std::string DIGITSPLUSDOT = DIGITS + '.';
+const std::string ASCII_LOWER = "abcdefghijklmnopqrstuvwxyz";
+const std::string ASCII_UPPER = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+const std::string ASCII_LETTERS = ASCII_LOWER + ASCII_UPPER;
+
 
 #include "IntegerToken.h"
 #include "FloatToken.h"
