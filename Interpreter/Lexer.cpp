@@ -44,43 +44,42 @@ std::pair<std::vector<std::variant<IntegerToken, FloatToken, StringToken, Operat
 			bool integer = tokenT.second;
 			
 			if (integer) 
-			{
-				
-				tokenVector.push_back(std::get<IntegerToken>(token));
+			{	
+				tokenVector.emplace_back(std::get<IntegerToken>(token));
 			}
 			else
 			{
-				tokenVector.push_back(std::get<FloatToken>(token));
+				tokenVector.emplace_back(std::get<FloatToken>(token));
 			}
 		}
 		else if (m_CurrentCharacter == '+')
 		{
-			tokenVector.push_back(OperatorToken(Operator(TOK_PLUS, m_CurrentPosition)));
+			tokenVector.emplace_back(Operator(TOK_PLUS, m_CurrentPosition));
 			Advance();
 		}
 		else if (m_CurrentCharacter == '-')
 		{
-			tokenVector.push_back(OperatorToken(Operator(TOK_MINUS, m_CurrentPosition)));
+			tokenVector.emplace_back(Operator(TOK_MINUS, m_CurrentPosition));
 			Advance();
 		}
 		else if (m_CurrentCharacter == '*')
 		{
-			tokenVector.push_back(OperatorToken(Operator(TOK_MULTIPLY, m_CurrentPosition)));
+			tokenVector.emplace_back(Operator(TOK_MULTIPLY, m_CurrentPosition));
 			Advance();
 		}
 		else if (m_CurrentCharacter == '/')
 		{
-			tokenVector.push_back(OperatorToken(Operator(TOK_DIVIDE, m_CurrentPosition)));
+			tokenVector.emplace_back(Operator(TOK_DIVIDE, m_CurrentPosition));
 			Advance();
 		}
 		else if (m_CurrentCharacter == '(')
 		{
-			tokenVector.push_back(OperatorToken(Operator(TOK_LEFTPAREN, m_CurrentPosition)));
+			tokenVector.emplace_back(Operator(TOK_LEFTPAREN, m_CurrentPosition));
 			Advance();
 		}
 		else if (m_CurrentCharacter == ')')
 		{
-			tokenVector.push_back(OperatorToken(Operator(TOK_RIGHTPAREN, m_CurrentPosition)));
+			tokenVector.emplace_back(Operator(TOK_RIGHTPAREN, m_CurrentPosition));
 			Advance();
 		}
 		else
