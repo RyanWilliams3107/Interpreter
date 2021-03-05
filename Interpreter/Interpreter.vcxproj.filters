@@ -15,90 +15,90 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Source.cpp">
+    <ClCompile Include="Source Files\Error.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Lexer.cpp">
+    <ClCompile Include="Source Files\FloatToken.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Position.cpp">
+    <ClCompile Include="Source Files\IllegalCharacterError.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Parser.cpp">
+    <ClCompile Include="Source Files\InsertArrowsIntoString.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="FloatToken.cpp">
+    <ClCompile Include="Source Files\IntegerToken.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="IntegerToken.cpp">
+    <ClCompile Include="Source Files\InvalidSyntaxError.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="StringToken.cpp">
+    <ClCompile Include="Source Files\Lexer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="OperatorToken.cpp">
+    <ClCompile Include="Source Files\OperatorToken.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Error.cpp">
+    <ClCompile Include="Source Files\Parser.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="RuntimeError.cpp">
+    <ClCompile Include="Source Files\Position.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="InvalidSyntaxError.cpp">
+    <ClCompile Include="Source Files\RuntimeError.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="IllegalCharacterError.cpp">
+    <ClCompile Include="Source Files\StringToken.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="InsertArrowsIntoString.cpp">
+    <ClCompile Include="Source Files\Source.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Lexer.h">
+    <ClInclude Include="Header Files\Error.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Token.h">
+    <ClInclude Include="Header Files\FloatToken.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Position.h">
+    <ClInclude Include="Header Files\InsertArrowsIntoString.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Operator.h">
+    <ClInclude Include="Header Files\IntegerToken.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Node.h">
+    <ClInclude Include="Header Files\Lexer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Parser.h">
+    <ClInclude Include="Header Files\Node.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="IntegerToken.h">
+    <ClInclude Include="Header Files\Operator.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="FloatToken.h">
+    <ClInclude Include="Header Files\Parser.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="StringToken.h">
+    <ClInclude Include="Header Files\Position.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="OperatorToken.h">
+    <ClInclude Include="Header Files\RuntimeError.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Error.h">
+    <ClInclude Include="Header Files\StringToken.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="RuntimeError.h">
+    <ClInclude Include="Header Files\Token.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="InvalidSyntaxError.h">
+    <ClInclude Include="Header Files\IllegalCharacterError.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="IllegalCharacterError.h">
+    <ClInclude Include="Header Files\InvalidSyntaxError.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="InsertArrowsIntoString.h">
+    <ClInclude Include="Header Files\OperatorToken.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

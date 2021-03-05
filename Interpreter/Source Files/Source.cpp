@@ -7,8 +7,6 @@
 
 int main()
 {
-	
-
 	std::string statement;
 	while (true)
 	{
