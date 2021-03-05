@@ -39,6 +39,21 @@
     <ClCompile Include="OperatorToken.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Error.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="RuntimeError.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="InvalidSyntaxError.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="IllegalCharacterError.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="InsertArrowsIntoString.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Lexer.h">
@@ -69,6 +84,21 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="OperatorToken.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Error.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="RuntimeError.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="InvalidSyntaxError.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="IllegalCharacterError.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="InsertArrowsIntoString.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

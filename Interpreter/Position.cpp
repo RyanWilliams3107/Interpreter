@@ -32,7 +32,27 @@ void Position::Advance(char current)
 	}
 }
 
-int Position::GetIndex()
+int Position::GetLineNumber() const
+{
+	return m_lineNumber;
+}
+
+int Position::GetColumnNumber() const
+{
+	return m_columnNumber;
+}
+
+std::string Position::GetFileName() const
+{
+	return m_fileName;
+}
+
+std::string Position::GetFileContents() const
+{
+	return m_fileContents;
+}
+
+int Position::GetIndex() const
 {
 	return m_index;
 }

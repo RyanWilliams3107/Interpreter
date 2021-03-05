@@ -15,7 +15,11 @@ public:
 	~Position() {}
 	Position Copy();
 	void Advance(char current = NULL);
-	int GetIndex();
+	int GetIndex() const;
+	int GetLineNumber() const;
+	int GetColumnNumber() const;
+	std::string GetFileName() const;
+	std::string GetFileContents() const; 
 	bool operator==(const Position& other) const;
 
 };

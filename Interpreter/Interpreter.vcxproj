@@ -145,24 +145,34 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Error.cpp" />
     <ClCompile Include="FloatToken.cpp" />
+    <ClCompile Include="IllegalCharacterError.cpp" />
+    <ClCompile Include="InsertArrowsIntoString.cpp" />
     <ClCompile Include="IntegerToken.cpp" />
+    <ClCompile Include="InvalidSyntaxError.cpp" />
     <ClCompile Include="Lexer.cpp" />
     <ClCompile Include="OperatorToken.cpp" />
     <ClCompile Include="Parser.cpp" />
     <ClCompile Include="Position.cpp" />
+    <ClCompile Include="RuntimeError.cpp" />
     <ClCompile Include="Source.cpp" />
     <ClCompile Include="StringToken.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Error.h" />
     <ClInclude Include="FloatToken.h" />
+    <ClInclude Include="IllegalCharacterError.h" />
+    <ClInclude Include="InsertArrowsIntoString.h" />
     <ClInclude Include="IntegerToken.h" />
+    <ClInclude Include="InvalidSyntaxError.h" />
     <ClInclude Include="Lexer.h" />
     <ClInclude Include="Node.h" />
     <ClInclude Include="Operator.h" />
     <ClInclude Include="OperatorToken.h" />
     <ClInclude Include="Parser.h" />
     <ClInclude Include="Position.h" />
+    <ClInclude Include="RuntimeError.h" />
     <ClInclude Include="StringToken.h" />
     <ClInclude Include="Token.h" />
   </ItemGroup>
