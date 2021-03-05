@@ -9,7 +9,7 @@ Parser::Parser(std::vector<std::variant<IntegerToken, FloatToken, StringToken, O
 void Parser::Advance()
 {
 	m_TokenIndex++;
-	if (m_TokenIndex < m_Tokens.size())
+	if (m_TokenIndex < (int)m_Tokens.size())
 	{
 		m_currentToken = m_Tokens[m_TokenIndex];
 	}

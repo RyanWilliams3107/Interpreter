@@ -1,8 +1,6 @@
 #ifndef _TOKEN_CPP
 #define _TOKEN_CPP
-#include "Position.h"
-#include "Operator.h"
-
+#include <iostream>
 
 #define TOK_INTEGER "INTEGER"
 #define TOK_FLOAT "FLOAT"
@@ -18,11 +16,11 @@
 #define TOK_POWER "POWER"
 #define TOK_EOF "EOF"
 
-const std::string DIGITS = "0123456789";
-const std::string DIGITSPLUSDOT = DIGITS + '.';
-const std::string ASCII_LOWER = "abcdefghijklmnopqrstuvwxyz";
-const std::string ASCII_UPPER = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-const std::string ASCII_LETTERS = ASCII_LOWER + ASCII_UPPER;
+static const std::string DIGITS = "0123456789";
+static const std::string DIGITSPLUSDOT = DIGITS + '.';
+static const std::string ASCII_LOWER = "abcdefghijklmnopqrstuvwxyz";
+static const std::string ASCII_UPPER = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+static const std::string ASCII_LETTERS = ASCII_LOWER + ASCII_UPPER;
 
 
 #include "IntegerToken.h"
