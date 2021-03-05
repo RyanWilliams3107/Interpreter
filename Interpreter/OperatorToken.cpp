@@ -15,22 +15,23 @@ OperatorToken::~OperatorToken()
 {
 }
 
-std::string OperatorToken::GetTokenType()
+std::string OperatorToken::GetTokenType() const
 {
 	return m_TokenType;
 }
 
-std::string OperatorToken::GetTokenValue()
+
+std::string OperatorToken::GetTokenValue() const
 {
 	return m_TokenValue;
 }
 
-Position OperatorToken::GetStartPosition()
+Position OperatorToken::GetStartPosition() const
 {
 	return m_StartPosition;
 }
 
-Position OperatorToken::GetEndPosition()
+Position OperatorToken::GetEndPosition() const
 {
 	return m_EndPosition;
 }
@@ -53,4 +54,12 @@ void OperatorToken::SetEndPosition(Position newPos)
 OperatorToken OperatorToken::Copy()
 {
 	return OperatorToken(Operator(m_TokenType, m_StartPosition));
+}
+
+
+
+std::ostream& operator<<(std::ostream& os, const OperatorToken& ot)
+{
+	os << ot.GetTokenType() << ", " << ot.GetTokenValue() << ".";
+	return os;
 }

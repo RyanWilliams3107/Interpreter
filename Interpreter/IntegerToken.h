@@ -15,15 +15,17 @@ public:
 	IntegerToken(const std::string& tokenType, int Value, Position startPos);
 	IntegerToken(const std::string& tokenType, int value, Position startPos, Position endPos);
 	~IntegerToken();
-	std::string GetTokenType();
-	int GetTokenValue();
-	Position GetStartPosition();
-	Position GetEndPosition();
+	std::string GetTokenType() const;
+	int GetTokenValue() const;
+	Position GetStartPosition() const;
+	Position GetEndPosition() const;
 	void SetTokenType(std::string tokType);
 	void SetTokenValue(int tokValue);
 	void SetStartPosition(Position newPos);
 	void SetEndPosition(Position newPos);
 	IntegerToken Copy();
+
+	friend std::ostream& operator<<(std::ostream& os, const IntegerToken &it);
 private:
 	std::string m_TokenType;
 	int m_TokenValue;

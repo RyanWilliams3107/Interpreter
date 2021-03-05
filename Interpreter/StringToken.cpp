@@ -42,22 +42,22 @@ StringToken::~StringToken()
 {
 }
 
-std::string StringToken::GetTokenType()
+std::string StringToken::GetTokenType() const
 {
 	return m_TokenType;
 }
 
-std::string StringToken::GetTokenValue()
+std::string StringToken::GetTokenValue() const
 {
 	return m_TokenValue;
 }
 
-Position StringToken::GetStartPosition()
+Position StringToken::GetStartPosition() const
 {
 	return m_StartPosition;
 }
 
-Position StringToken::GetEndPosition()
+Position StringToken::GetEndPosition() const
 {
 	return m_EndPosition;
 }
@@ -85,4 +85,10 @@ void StringToken::SetEndPosition(Position newPos)
 StringToken StringToken::Copy()
 {
 	return StringToken(m_TokenType, m_TokenValue, m_StartPosition, m_EndPosition);
+}
+
+std::ostream& operator<<(std::ostream& os, const StringToken& st)
+{
+	os << st.GetTokenType() << ", " << st.GetTokenValue() << ".";
+	return os;
 }

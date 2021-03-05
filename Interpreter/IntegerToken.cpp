@@ -42,22 +42,22 @@ IntegerToken::~IntegerToken()
 {
 }
 
-std::string IntegerToken::GetTokenType()
+std::string IntegerToken::GetTokenType() const
 {
 	return m_TokenType;
 }
 
-int IntegerToken::GetTokenValue()
+int IntegerToken::GetTokenValue() const
 {
 	return m_TokenValue;
 }
 
-Position IntegerToken::GetStartPosition()
+Position IntegerToken::GetStartPosition() const
 {
 	return m_StartPosition;
 }
 
-Position IntegerToken::GetEndPosition()
+Position IntegerToken::GetEndPosition() const
 {
 	return m_EndPosition;
 }
@@ -85,4 +85,10 @@ void IntegerToken::SetEndPosition(Position newPos)
 IntegerToken IntegerToken::Copy()
 {
 	return IntegerToken(m_TokenType, m_TokenValue, m_StartPosition, m_EndPosition);
+}
+
+std::ostream& operator<<(std::ostream& os, const IntegerToken& it)
+{
+	os << it.GetTokenType() << ", " << it.GetTokenValue() << ".";
+	return os;
 }

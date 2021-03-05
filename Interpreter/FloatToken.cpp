@@ -44,22 +44,22 @@ FloatToken::~FloatToken()
 {
 }
 
-std::string FloatToken::GetTokenType()
+std::string FloatToken::GetTokenType() const
 {
     return m_TokenType;
 }
 
-float FloatToken::GetTokenValue()
+float FloatToken::GetTokenValue() const
 {
     return m_TokenValue;
 }
 
-Position FloatToken::GetStartPosition()
+Position FloatToken::GetStartPosition() const
 {
     return m_StartPosition;
 }
 
-Position FloatToken::GetEndPosition()
+Position FloatToken::GetEndPosition() const
 {
     return m_EndPosition;
 }
@@ -87,6 +87,12 @@ void FloatToken::SetEndPosition(Position newPos)
 FloatToken FloatToken::Copy()
 {
     return FloatToken(m_TokenType, m_TokenValue, m_StartPosition, m_EndPosition);
+}
+
+std::ostream& operator<<(std::ostream& os, const FloatToken &ft)
+{
+    os << ft.GetTokenType() << ", " << ft.GetTokenValue() << ".";
+    return os;
 }
 
 

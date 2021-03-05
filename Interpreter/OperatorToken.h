@@ -12,14 +12,17 @@ public:
 	OperatorToken();
 	OperatorToken(Operator op);
 	~OperatorToken();
-	std::string GetTokenType();
-	std::string GetTokenValue();
-	Position GetStartPosition();
-	Position GetEndPosition();
+	std::string GetTokenType() const;
+	std::string GetTokenValue() const;
+	Position GetStartPosition() const;
+	Position GetEndPosition() const;
 	void SetTokenType(const std::string& tokType);
 	void SetStartPosition(Position newPos);
 	void SetEndPosition(Position newPos);
 	OperatorToken Copy();
+
+	friend std::ostream& operator<<(std::ostream& os, const OperatorToken& ot);
+	
 private:
 	std::string m_TokenType;
 	std::string m_TokenValue = "none";

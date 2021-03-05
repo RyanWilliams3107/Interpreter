@@ -25,7 +25,7 @@ int main()
 		for (auto& v : tokens)
 		{
 			std::visit([](auto&& arg) {
-				std::cout << arg.GetTokenType() << ": " << arg.GetTokenValue() << " ";
+				std::cout << arg << " ";
 				}, v);
 		}
 		std::cout << std::endl;
