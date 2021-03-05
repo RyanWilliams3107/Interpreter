@@ -47,7 +47,7 @@ public:
 		return m_EndPosition;
 	}
 
-	void SetTokenType(std::string tokType)
+	void SetTokenType(const std::string& tokType)
 	{
 		m_TokenType = tokType;
 	}

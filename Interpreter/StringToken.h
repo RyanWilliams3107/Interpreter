@@ -14,28 +14,28 @@ public:
 	{
 
 	}
-	StringToken(std::string tokenType)
+	StringToken(const std::string& tokenType)
 	{
 		m_TokenType = tokenType;
 	}
-	StringToken(std::string tokenType, std::string Value)
+	StringToken(const std::string& tokenType, std::string Value)
 	{
 		m_TokenType = tokenType;
 		m_TokenValue = Value;
 	}
-	StringToken(std::string tokenType, Position startPos)
+	StringToken(const std::string& tokenType, Position startPos)
 	{
 		m_TokenType = tokenType;
 		m_StartPosition = startPos;
 	}
-	StringToken(std::string tokenType, std::string Value, Position startPos)
+	StringToken(const std::string& tokenType, std::string Value, Position startPos)
 	{
 		m_TokenType = tokenType;
 		m_TokenValue = Value;
 		m_StartPosition = startPos.Copy();
 		m_EndPosition = startPos.Copy();
 	}
-	StringToken(std::string tokenType, std::string value, Position startPos, Position endPos)
+	StringToken(const std::string& tokenType, std::string value, Position startPos, Position endPos)
 	{
 		m_TokenType = tokenType;
 		m_TokenValue = value;
@@ -65,12 +65,12 @@ public:
 		return m_EndPosition;
 	}
 
-	void SetTokenType(std::string tokType)
+	void SetTokenType(const std::string& tokType)
 	{
 		m_TokenType = tokType;
 	}
 
-	void SetTokenValue(std::string tokValue)
+	void SetTokenValue(const std::string& tokValue)
 	{
 		m_TokenValue = tokValue;
 	}

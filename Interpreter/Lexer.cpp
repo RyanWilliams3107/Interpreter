@@ -4,7 +4,7 @@
 #include<vector>
 #include <string>
 
-Lexer::Lexer(std::string fileName, std::string text)
+Lexer::Lexer(std::string fileName, const std::string& text)
 {
 	m_FileName = fileName;
 	m_Text = text;
@@ -45,16 +45,12 @@ std::pair<std::vector<std::variant<IntegerToken, FloatToken, StringToken, Operat
 			
 			if (integer) 
 			{
-				IntegerToken intTokenToPush = std::visit([](auto&& token) -> IntegerToken { 
-					return IntegerToken(token.GetTokenType(), (int)token.GetTokenValue(), token.GetStartPosition(), token.GetEndPosition()); }, token);
-				tokenVector.push_back(intTokenToPush);
+				
+				tokenVector.push_back(std::get<IntegerToken>(token));
 			}
 			else
 			{
-				FloatToken floatTokenToPush = std::visit([](auto&& token) -> FloatToken { 
-					return FloatToken(token.GetTokenType(), (float)token.GetTokenValue(), token.GetStartPosition(), token.GetEndPosition()); 
-					}, token);
-				tokenVector.push_back(floatTokenToPush);
+				tokenVector.push_back(std::get<FloatToken>(token));
 			}
 		}
 		else if (m_CurrentCharacter == '+')

@@ -15,28 +15,28 @@ public:
 	{
 		m_TokenValue = 0;
 	}
-	IntegerToken(std::string tokenType)
+	IntegerToken(const std::string& tokenType)
 	{
 		m_TokenType = tokenType;
 	}
-	IntegerToken(std::string tokenType, int Value)
+	IntegerToken(const std::string& tokenType, int Value)
 	{
 		m_TokenType = tokenType;
 		m_TokenValue = Value;
 	}
-	IntegerToken(std::string tokenType, Position startPos)
+	IntegerToken(const std::string& tokenType, Position startPos)
 	{
 		m_TokenType = tokenType;
 		m_StartPosition = startPos;
 	}
-	IntegerToken(std::string tokenType, int Value, Position startPos)
+	IntegerToken(const std::string& tokenType, int Value, Position startPos)
 	{
 		m_TokenType = tokenType;
 		m_TokenValue = Value;
 		m_StartPosition = startPos.Copy();
 		m_EndPosition = startPos.Copy();
 	}
-	IntegerToken(std::string tokenType, int value, Position startPos, Position endPos)
+	IntegerToken(const std::string& tokenType, int value, Position startPos, Position endPos)
 	{
 		m_TokenType = tokenType;
 		m_TokenValue = value;

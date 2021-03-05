@@ -5,7 +5,7 @@ template<class T>
 class NumberNode
 {
 private:
-	Token<T> m_Token;
+	T m_Token;
 public:
 	NumberNode<T>(Token<T> tok)
 	{
@@ -27,7 +27,7 @@ class BinaryOperationNode
 private:
 	NumberNode m_Left;
 	NumberNode m_Right;
-	Token<T> m_OpTok;
+	T m_OpTok;
 public:
 	BinaryOperationNode<T>(NumberNode Left, Token OpTok, NumberNode Right)
 	{

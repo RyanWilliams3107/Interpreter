@@ -19,28 +19,28 @@ public:
 	{
 		m_TokenValue = 0.0f;
 	}
-	FloatToken(std::string tokenType)
+	FloatToken(const std::string& tokenType)
 	{
 		m_TokenType = tokenType;
 	}
-	FloatToken(std::string tokenType, float Value)
+	FloatToken(const std::string& tokenType, float Value)
 	{
 		m_TokenType = tokenType;
 		m_TokenValue = Value;
 	}
-	FloatToken(std::string tokenType, Position startPos)
+	FloatToken(const std::string& tokenType, Position startPos)
 	{
 		m_TokenType = tokenType;
 		m_StartPosition = startPos;
 	}
-	FloatToken(std::string tokenType, float Value, Position startPos)
+	FloatToken(const std::string& tokenType, float Value, Position startPos)
 	{
 		m_TokenType = tokenType;
 		m_TokenValue = Value;
 		m_StartPosition = startPos.Copy();
 		m_EndPosition = startPos.Copy();
 	}
-	FloatToken(std::string tokenType, float value, Position startPos, Position endPos)
+	FloatToken(const std::string& tokenType, float value, Position startPos, Position endPos)
 	{
 		m_TokenType = tokenType;
 		m_TokenValue = value;
@@ -70,7 +70,7 @@ public:
 		return m_EndPosition;
 	}
 
-	void SetTokenType(std::string tokType)
+	void SetTokenType(const std::string& tokType)
 	{
 		m_TokenType = tokType;
 	}
@@ -93,10 +93,5 @@ public:
 	{
 		return FloatToken(m_TokenType, m_TokenValue, m_StartPosition, m_EndPosition);
 	}
-	/*explicit operator IntegerToken() const
-	{
-		return IntegerToken(m_TokenType, (int)m_TokenValue, m_StartPosition, m_EndPosition);
-	}*/
-
 };
 #endif // !_FLOATTOKEN_CPP
