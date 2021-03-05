@@ -22,7 +22,6 @@ public:
 	OperatorToken Copy();
 
 	friend std::ostream& operator<<(std::ostream& os, const OperatorToken& ot);
-	
 private:
 	std::string m_TokenType;
 	std::string m_TokenValue = "none";
