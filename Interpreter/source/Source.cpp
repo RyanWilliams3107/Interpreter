@@ -38,6 +38,10 @@ int main()
 
 		BinaryOperationNode<IntegerToken, FloatToken> binopnode = BinaryOperationNode<IntegerToken, FloatToken>(Left, OpTok, Right);
 		std::cout << binopnode << std::endl;
+
+		NumberNode<FloatToken> ft = NumberNode<FloatToken>(FloatToken(TOK_FLOAT, 3.5f, Position(), Position()));
+		UnaryOperationNode<NumberNode<FloatToken>> uon = UnaryOperationNode<NumberNode<FloatToken>>(OperatorToken(Operator(TOK_MINUS, Position())), ft);
+		std::cout << uon << std::endl;
 	}
 	std::cin.get();
 	return 0;

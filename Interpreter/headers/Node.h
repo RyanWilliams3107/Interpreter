@@ -2,7 +2,7 @@
 #define _NODE_CPP
 #include "Token.h"
 
-template<class T>
+template<typename T>
 class NumberNode
 {
 private:
@@ -65,24 +65,35 @@ public:
 };
 
 template <typename T>
-class UnaryOperationToken
+class UnaryOperationNode
 {
+
 public:
-	OperatorToken m_Token;
-	T m_Node;
-	Position m_Start;
-	Position m_End;
-private:
-	UnaryOperationToken<T>(OperatorToken optok, T node)
+	UnaryOperationNode<T>(OperatorToken optok, T node)
 	{
 		m_Token = optok;
 		m_Node = node;
 		m_Start = optok.GetStartPosition();
 		m_End = node.GetEnd();
 	}
+
+	void SetToken(OperatorToken tok) { m_Token = tok; }
+	void SetNode(T node) { m_Node = node; }
+	void SetStart(Position pos) { m_Start = pos; }
+	void SetEnd(Position pos) { m_End = pos; }
+
+	OperatorToken GetToken() const { return m_Token; }
+	T GetNode() const { return m_Node; }
+	Position GetStart() const { return m_Start; }
+	Position GetEnd() const { return m_End; }
+
+	friend std::ostream& operator<<(const std::ostream* os, const UnaryOperationNode<T>& uon);
+private:
+	OperatorToken m_Token;
+	T m_Node;
+	Position m_Start;
+	Position m_End;
 };
-
-
 
 template <typename T>
 std::ostream& operator<<(std::ostream& os, const NumberNode<T>& node)
@@ -91,11 +102,17 @@ std::ostream& operator<<(std::ostream& os, const NumberNode<T>& node)
 	return os;
 }
 
-
 template <typename Left, typename Right>
 std::ostream& operator<<(std::ostream& os, const BinaryOperationNode<Left, Right>& node)
 {
-	os << node.GetLeft() << " " << node.GetToken() << " " << node.GetRight();
+	os << node.GetLeft().GetToken().GetTokenValue() << " " << node.GetToken().GetTokenType() << " " << node.GetRight().GetToken().GetTokenValue();
+	return os;
+}
+
+template <typename T>
+std::ostream& operator<<(std::ostream& os, const UnaryOperationNode<T>& uon)
+{
+	os << uon.GetToken().GetTokenType() << " " << uon.GetNode().GetToken().GetTokenValue();
 	return os;
 }
 #endif;

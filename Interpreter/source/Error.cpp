@@ -1,4 +1,5 @@
 #include "Error.h"
+#include "InsertArrowsIntoString.h"
 #include <string>
 
 Error::Error(Position Start, Position End, const std::string& Name, const std::string& Details)
@@ -13,8 +14,7 @@ std::string Error::ErrorAsString() const
 {
 	std::string result = m_ErrorName + ": " + m_ErrorDetails + "\n";
 	result += "File " + m_StartPosition.GetFileName() + ", line " + std::to_string(m_StartPosition.GetLineNumber());
-#if 0
-	result += "\n\n" + StringWithArrows(m_StartPosition.GetFileContents(), m_StartPosition, m_EndPosition);
-#endif
+
+	result += "\n\n" + InsertArrowsIntoString(m_StartPosition.GetFileContents(), m_StartPosition, m_EndPosition);
 	return result;
 }
