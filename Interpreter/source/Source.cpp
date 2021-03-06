@@ -16,10 +16,8 @@ int main()
 		std::cout << statement << std::endl;
 
 		Lexer lexer("<stdin>", statement);
-		std::pair<std::vector<std::variant<IntegerToken, FloatToken, StringToken, OperatorToken>>, bool> generatedTokens = lexer.GenerateTokens();
-		std::vector<std::variant<IntegerToken, FloatToken, StringToken, OperatorToken>> tokens = generatedTokens.first;
-		bool error = generatedTokens.second;
-
+		auto [tokens, error] = lexer.GenerateTokens();
+	
 		for (auto& v : tokens)
 		{
 			std::visit([](auto&& arg) {

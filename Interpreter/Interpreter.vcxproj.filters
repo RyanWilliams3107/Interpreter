@@ -15,90 +15,90 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\Error.cpp">
+    <ClCompile Include="source\Error.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\FloatToken.cpp">
+    <ClCompile Include="source\FloatToken.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\IllegalCharacterError.cpp">
+    <ClCompile Include="source\IllegalCharacterError.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\InsertArrowsIntoString.cpp">
+    <ClCompile Include="source\InsertArrowsIntoString.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\IntegerToken.cpp">
+    <ClCompile Include="source\IntegerToken.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\InvalidSyntaxError.cpp">
+    <ClCompile Include="source\InvalidSyntaxError.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\Lexer.cpp">
+    <ClCompile Include="source\Lexer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\OperatorToken.cpp">
+    <ClCompile Include="source\OperatorToken.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\Parser.cpp">
+    <ClCompile Include="source\Parser.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\Position.cpp">
+    <ClCompile Include="source\Position.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\RuntimeError.cpp">
+    <ClCompile Include="source\RuntimeError.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\Source.cpp">
+    <ClCompile Include="source\Source.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\StringToken.cpp">
+    <ClCompile Include="source\StringToken.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="include\Error.h">
+    <ClInclude Include="headers\Error.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="include\FloatToken.h">
+    <ClInclude Include="headers\FloatToken.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="include\IllegalCharacterError.h">
+    <ClInclude Include="headers\IllegalCharacterError.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="include\InsertArrowsIntoString.h">
+    <ClInclude Include="headers\InsertArrowsIntoString.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="include\IntegerToken.h">
+    <ClInclude Include="headers\IntegerToken.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="include\InvalidSyntaxError.h">
+    <ClInclude Include="headers\InvalidSyntaxError.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="include\Lexer.h">
+    <ClInclude Include="headers\Lexer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="include\Node.h">
+    <ClInclude Include="headers\Node.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="include\Operator.h">
+    <ClInclude Include="headers\Operator.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="include\OperatorToken.h">
+    <ClInclude Include="headers\OperatorToken.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="include\Parser.h">
+    <ClInclude Include="headers\Parser.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="include\Position.h">
+    <ClInclude Include="headers\Position.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="include\RuntimeError.h">
+    <ClInclude Include="headers\RuntimeError.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="include\StringToken.h">
+    <ClInclude Include="headers\StringToken.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="include\Token.h">
+    <ClInclude Include="headers\Token.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

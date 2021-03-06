@@ -90,7 +90,7 @@
       <ConformanceMode>true</ConformanceMode>
       <PreprocessToFile>false</PreprocessToFile>
       <AdditionalOptions>/std:c++latest %(AdditionalOptions)</AdditionalOptions>
-      <AdditionalIncludeDirectories>C:\Users\ryanw\Desktop\Int\Interpreter\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\ryanw\Desktop\Int\Interpreter\headers;C:\Users\ryanw\Desktop\Int\Interpreter\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -107,7 +107,7 @@
       <ConformanceMode>true</ConformanceMode>
       <PreprocessToFile>false</PreprocessToFile>
       <AdditionalOptions>/std:c++latest %(AdditionalOptions)</AdditionalOptions>
-      <AdditionalIncludeDirectories>C:\Users\ryanw\Desktop\Int\Interpreter\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\ryanw\Desktop\Int\Interpreter\headers;C:\Users\ryanw\Desktop\Int\Interpreter\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -147,36 +147,36 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="src\Error.cpp" />
-    <ClCompile Include="src\FloatToken.cpp" />
-    <ClCompile Include="src\IllegalCharacterError.cpp" />
-    <ClCompile Include="src\InsertArrowsIntoString.cpp" />
-    <ClCompile Include="src\IntegerToken.cpp" />
-    <ClCompile Include="src\InvalidSyntaxError.cpp" />
-    <ClCompile Include="src\Lexer.cpp" />
-    <ClCompile Include="src\OperatorToken.cpp" />
-    <ClCompile Include="src\Parser.cpp" />
-    <ClCompile Include="src\Position.cpp" />
-    <ClCompile Include="src\RuntimeError.cpp" />
-    <ClCompile Include="src\Source.cpp" />
-    <ClCompile Include="src\StringToken.cpp" />
+    <ClCompile Include="source\Error.cpp" />
+    <ClCompile Include="source\FloatToken.cpp" />
+    <ClCompile Include="source\IllegalCharacterError.cpp" />
+    <ClCompile Include="source\InsertArrowsIntoString.cpp" />
+    <ClCompile Include="source\IntegerToken.cpp" />
+    <ClCompile Include="source\InvalidSyntaxError.cpp" />
+    <ClCompile Include="source\Lexer.cpp" />
+    <ClCompile Include="source\OperatorToken.cpp" />
+    <ClCompile Include="source\Parser.cpp" />
+    <ClCompile Include="source\Position.cpp" />
+    <ClCompile Include="source\RuntimeError.cpp" />
+    <ClCompile Include="source\Source.cpp" />
+    <ClCompile Include="source\StringToken.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="include\Error.h" />
-    <ClInclude Include="include\FloatToken.h" />
-    <ClInclude Include="include\IllegalCharacterError.h" />
-    <ClInclude Include="include\InsertArrowsIntoString.h" />
-    <ClInclude Include="include\IntegerToken.h" />
-    <ClInclude Include="include\InvalidSyntaxError.h" />
-    <ClInclude Include="include\Lexer.h" />
-    <ClInclude Include="include\Node.h" />
-    <ClInclude Include="include\Operator.h" />
-    <ClInclude Include="include\OperatorToken.h" />
-    <ClInclude Include="include\Parser.h" />
-    <ClInclude Include="include\Position.h" />
-    <ClInclude Include="include\RuntimeError.h" />
-    <ClInclude Include="include\StringToken.h" />
-    <ClInclude Include="include\Token.h" />
+    <ClInclude Include="headers\Error.h" />
+    <ClInclude Include="headers\FloatToken.h" />
+    <ClInclude Include="headers\IllegalCharacterError.h" />
+    <ClInclude Include="headers\InsertArrowsIntoString.h" />
+    <ClInclude Include="headers\IntegerToken.h" />
+    <ClInclude Include="headers\InvalidSyntaxError.h" />
+    <ClInclude Include="headers\Lexer.h" />
+    <ClInclude Include="headers\Node.h" />
+    <ClInclude Include="headers\Operator.h" />
+    <ClInclude Include="headers\OperatorToken.h" />
+    <ClInclude Include="headers\Parser.h" />
+    <ClInclude Include="headers\Position.h" />
+    <ClInclude Include="headers\RuntimeError.h" />
+    <ClInclude Include="headers\StringToken.h" />
+    <ClInclude Include="headers\Token.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

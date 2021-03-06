@@ -39,10 +39,8 @@ std::pair<std::vector<std::variant<IntegerToken, FloatToken, StringToken, Operat
 		}
 		else if (digits.find(m_CurrentCharacter) != std::string::npos)
 		{
-			std::pair<std::variant<IntegerToken, FloatToken>, bool> tokenT = MakeNumber();
-			std::variant<IntegerToken, FloatToken> token = tokenT.first;
-			bool integer = tokenT.second;
-			
+			auto [token, integer] = MakeNumber();
+		
 			if (integer) 
 			{	
 				tokenVector.emplace_back(std::get<IntegerToken>(token));
@@ -123,10 +121,10 @@ std::pair<std::variant<IntegerToken, FloatToken>, bool> Lexer::MakeNumber()
 
 	if (dotCount == 0)
 	{
-		return std::pair<IntegerToken, bool> { IntegerToken(TOK_INTEGER, std::stoi(numberAsString), startPos, m_CurrentPosition), true };
+		return { IntegerToken(TOK_INTEGER, std::stoi(numberAsString), startPos, m_CurrentPosition), true };
 	}
 	else
 	{
-		return std::pair<FloatToken, bool>  { FloatToken(TOK_FLOAT, std::stof(numberAsString), startPos, m_CurrentPosition), false };
+		return { FloatToken(TOK_FLOAT, std::stof(numberAsString), startPos, m_CurrentPosition), false };
 	}
 }
