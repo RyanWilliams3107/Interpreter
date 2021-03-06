@@ -1,6 +1,7 @@
 #ifndef _RUNTIMEERROR_CPP
 #define _RUNTIMEERROR_CPP
-#include "Error.h"
+#include <iostream>
+#include "Position.h"
 class RuntimeError
 {
 public:

@@ -6,6 +6,7 @@
 #include<variant>
 #include<sstream>
 
+
 int main()
 {
 	std::string statement;
