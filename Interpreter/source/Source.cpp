@@ -1,6 +1,7 @@
 #include "Token.h"
 #include "Lexer.h"
 #include "Parser.h"
+#include "Node.h"
 #include<vector>
 #include<variant>
 #include<sstream>
@@ -27,6 +28,16 @@ int main()
 		std::cout << std::endl;
 
 		Parser parser(tokens);
+
+		NumberNode<IntegerToken> Left = NumberNode<IntegerToken>(IntegerToken(TOK_INTEGER, 12, Position(), Position()));
+		NumberNode<FloatToken> Right = NumberNode<FloatToken>(FloatToken(TOK_FLOAT, 1.23, Position(), Position()));
+		OperatorToken OpTok = OperatorToken(Operator(TOK_PLUS, Position()));
+
+		std::cout << Left << std::endl;
+		std::cout << Right << std::endl;
+
+		BinaryOperationNode<IntegerToken, FloatToken> binopnode = BinaryOperationNode<IntegerToken, FloatToken>(Left, OpTok, Right);
+		std::cout << binopnode << std::endl;
 	}
 	std::cin.get();
 	return 0;

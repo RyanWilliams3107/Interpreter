@@ -17,5 +17,9 @@ struct Operator
 		m_OperatorName = opName;
 		m_Position = pos;
 	}
+
+	std::string GetOperatorName() const { return m_OperatorName; }
+
+	friend std::ostream& operator<<(const std::ostream& os,const Operator& op);
 };
 #endif
