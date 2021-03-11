@@ -149,6 +149,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="source\ParseResult.cpp" />
     <ClCompile Include="source\Operator.cpp" />
     <ClCompile Include="source\Error.cpp" />
     <ClCompile Include="source\FloatToken.cpp" />

@@ -16,6 +16,10 @@ private:
 	std::string m_ErrorDetails;
 };
 
+#include "RuntimeError.h"
+#include "InvalidSyntaxError.h"
+#include "IllegalCharacterError.h"
+
 #endif // !_ERROR_CPP
 
 

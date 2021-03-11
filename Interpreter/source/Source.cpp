@@ -31,7 +31,7 @@ int main()
 		Parser parser(tokens);
 
 		NumberNode<IntegerToken> Left = NumberNode<IntegerToken>(IntegerToken(TOK_INTEGER, 12, Position(), Position()));
-		NumberNode<FloatToken> Right = NumberNode<FloatToken>(FloatToken(TOK_FLOAT, 1.23, Position(), Position()));
+		NumberNode<FloatToken> Right = NumberNode<FloatToken>(FloatToken(TOK_FLOAT, 1.23f, Position(), Position()));
 		OperatorToken OpTok = OperatorToken(Operator(TOK_PLUS, Position()));
 
 		std::cout << Left << std::endl;

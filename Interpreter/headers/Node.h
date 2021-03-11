@@ -27,7 +27,6 @@ public:
 	void SetStart(Position New) { m_Start = New; }
 	void SetEnd(Position New) { m_End = New; }
 
-	friend std::ostream& operator<<(const std::ostream& os, const NumberNode<T>& node);
 };
 
 template<typename Left, typename Right>
@@ -61,7 +60,7 @@ public:
 	Position GetStart() const { return m_Start; }
 	Position GetEnd() const { return m_End; }
 
-	friend std::ostream& operator<<(const std::ostream& os, const BinaryOperationNode<Left, Right>& node);
+
 };
 
 template <typename T>
@@ -86,8 +85,6 @@ public:
 	T GetNode() const { return m_Node; }
 	Position GetStart() const { return m_Start; }
 	Position GetEnd() const { return m_End; }
-
-	friend std::ostream& operator<<(const std::ostream* os, const UnaryOperationNode<T>& uon);
 private:
 	OperatorToken m_Token;
 	T m_Node;
