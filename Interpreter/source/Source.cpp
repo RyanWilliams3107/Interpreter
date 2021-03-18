@@ -29,6 +29,7 @@ int main()
 		std::cout << std::endl;
 
 		Parser parser(tokens);
+		parser.Parse();
 
 		NumberNode<IntegerToken> Left = NumberNode<IntegerToken>(IntegerToken(TOK_INTEGER, 12, Position(), Position()));
 		NumberNode<FloatToken> Right = NumberNode<FloatToken>(FloatToken(TOK_FLOAT, 1.23f, Position(), Position()));
