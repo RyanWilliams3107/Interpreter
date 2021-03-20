@@ -6,57 +6,46 @@ Parser::Parser(std::vector<std::variant<IntegerToken, FloatToken, StringToken, O
 	Advance();
 }
 
-void Parser::Advance()
+std::variant<IntegerToken, FloatToken, StringToken, OperatorToken> Parser::Advance()
 {
 	m_TokenIndex++;
 	if (m_TokenIndex < (int)m_Tokens.size())
 	{
 		m_currentToken = m_Tokens[m_TokenIndex];
 	}
+	return m_currentToken;
 }
 
 ParseResult Parser::Parse()
 {
 	ParseResult result = Expression();
 
-	while (m_TokenIndex < m_Tokens.size())
-	{
-
-		Parser::TokenType IsTypeInteger = IsCurrentTokenIntToken();
-		Parser::TokenType IsTypeFloat = IsCurrentTokenFloatToken();
-		Parser::TokenType IsTypeOperator = IsCurrentTokenOpToken();
-		Parser::TokenType IsTypeString = IsCurrentTokenStrToken();
-
-		if (IsTypeInteger == Parser::TokenType::INTEGER)
-		{
-			std::cout << IsTypeInteger << " Integer." << std::endl;
-		}
-		else if (IsTypeFloat == Parser::TokenType::FLOAT)
-		{
-			std::cout << IsTypeFloat << " Float." << std::endl;
-		}
-		else if(IsTypeOperator == Parser::TokenType::OPERATOR)
-		{
-			std::cout << IsTypeOperator << " Operator." << std::endl;
-		}
-		else 
-		{
-			std::cout << IsTypeString << " String." << std::endl;
-		}
-		Advance();
-	}
-
-
-	//std::cout << CurTok << std::endl;
-	if (!result.GetError())
-	{
-	}
-	return result;
 }
 
 ParseResult Parser::Factor()
 {
-	return ParseResult();
+	ParseResult result = ParseResult();
+	std::variant<IntegerToken, FloatToken, StringToken, OperatorToken> tempToken = m_currentToken;
+
+
+	while (m_TokenIndex < (int)m_Tokens.size())
+	{
+
+		Parser::TokenType type = ExtractTokenType(tempToken);
+		auto [IntToken, FltToken, StrToken, OpToken] = GetToken(type, tempToken);
+		switch  (type)
+		{
+		case Parser::TokenType::INTEGER:
+			break;
+		case Parser::TokenType::FLOAT:
+			break;
+		case Parser::TokenType::OPERATOR:
+			break;
+		case Parser::TokenType::STRING:
+			break;
+		}
+		Advance();
+	}
 }
 
 ParseResult Parser::BinaryOperation()
@@ -74,55 +63,63 @@ ParseResult Parser::Expression()
 	return ParseResult();
 }
 
-Parser::TokenType Parser::IsCurrentTokenIntToken()
+Parser::TokenType Parser::ExtractTokenType(std::variant<IntegerToken, FloatToken, StringToken, OperatorToken> token)
 {
+	TokenType type;
 
 	try
 	{
-		IntegerToken tok = std::get<IntegerToken>(m_currentToken);
-		return Parser::TokenType::INTEGER;
+		std::get<IntegerToken>(token);
+		type = Parser::TokenType::INTEGER;
+		return type;
 	}
-	catch (const std::bad_variant_access& e)
-	{
-		return Parser::TokenType::NONE;
-	}	
-}
-
-Parser::TokenType Parser::IsCurrentTokenFloatToken()
-{
+	catch (const std::bad_variant_access& e) { }
 	try
 	{
-		FloatToken tok = std::get<FloatToken>(m_currentToken);
-		return Parser::TokenType::FLOAT;
+		std::get<FloatToken>(token);
+		type = Parser::TokenType::FLOAT;
+		return type;
 	}
-	catch (const std::bad_variant_access& e)
-	{
-		return Parser::TokenType::NONE;
-	}
-}
+	catch (const std::bad_variant_access& e) {}
 
-Parser::TokenType Parser::IsCurrentTokenOpToken()
-{
 	try
 	{
-		OperatorToken tok = std::get<OperatorToken>(m_currentToken);
-		return Parser::TokenType::OPERATOR;
+		std::get<OperatorToken>(token);
+		type = Parser::TokenType::OPERATOR;
+		return type;
 	}
-	catch (const std::bad_variant_access& e)
-	{
-		return Parser::TokenType::NONE;
-	}
-}
+	catch (const std::bad_variant_access& e) {}
 
-Parser::TokenType Parser::IsCurrentTokenStrToken()
-{
 	try
 	{
-		StringToken tok = std::get<StringToken>(m_currentToken);
-		return Parser::TokenType::STRING;
+		std::get<StringToken>(token);
+		type = Parser::TokenType::STRING;
+		return type;
 	}
-	catch (const std::bad_variant_access& e)
-	{
-		return Parser::TokenType::NONE;
-	}
+	catch (const std::bad_variant_access& e) {}
+
+	return Parser::TokenType::NONE;
 }
+
+std::tuple<IntegerToken, FloatToken, OperatorToken, StringToken> Parser::GetToken(Parser::TokenType type, std::variant<IntegerToken, FloatToken, StringToken, OperatorToken> token)
+{
+	if (type == Parser::TokenType::INTEGER) {
+		IntegerToken intToken = std::get<IntegerToken>(token);
+		return { intToken, FloatToken(), OperatorToken(), StringToken() };
+	}
+	else if (type == Parser::TokenType::FLOAT) {
+		FloatToken floatToken = std::get<FloatToken>(token);
+		return { IntegerToken(), floatToken, OperatorToken(), StringToken() };
+	}
+	else if (type == Parser::TokenType::OPERATOR) {
+		OperatorToken opToken = std::get<OperatorToken>(token);
+		return { IntegerToken(), FloatToken(), opToken, StringToken() };	
+	}
+	else {
+		StringToken strToken = std::get<StringToken>(token);
+		return { IntegerToken(), FloatToken(), OperatorToken(), strToken };
+	}
+	return std::tuple<IntegerToken, FloatToken, OperatorToken, StringToken>();
+}
+
+

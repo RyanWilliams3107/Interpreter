@@ -21,16 +21,14 @@ private:
 	};
 public:
 	Parser(std::vector<std::variant<IntegerToken, FloatToken, StringToken, OperatorToken>> tokens);
-	void Advance();
+	std::variant<IntegerToken, FloatToken, StringToken, OperatorToken> Advance();
 	ParseResult Parse();
 	ParseResult Factor();
 	ParseResult BinaryOperation();
 	ParseResult Term();
 	ParseResult Expression();
-	TokenType IsCurrentTokenIntToken();
-	TokenType IsCurrentTokenFloatToken();
-	TokenType IsCurrentTokenOpToken();
-	TokenType IsCurrentTokenStrToken();
+	TokenType ExtractTokenType(std::variant<IntegerToken, FloatToken, StringToken, OperatorToken> token);
+	std::tuple<IntegerToken, FloatToken, OperatorToken, StringToken> GetToken(TokenType type, std::variant<IntegerToken, FloatToken, StringToken, OperatorToken> token);
 };
 #endif
 
